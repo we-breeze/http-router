@@ -1,0 +1,25 @@
+[package]
+name = "brz-http-router"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Zero-allocation route selection for Breeze HTTP gateways"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/we-breeze/http-router"
+
+[dependencies]
+http = "1"
+thiserror = "2"
+
+[lints.rust]
+unsafe_code = "deny"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[lib]
+name = "brz_http_router"
+
+[[bench]]
+name = "router"
+harness = false

@@ -25,7 +25,7 @@ def next_tag(manifest):
         for tag in git("tag", "--list", f"{prefix}*").splitlines()
         if (match := VERSION.fullmatch(tag)) and tag.startswith(prefix)
     ]
-    return f"{prefix}{max(patches, default=-1) + 1}"
+    return f"{prefix}{max(patches, default=0) + 1}"
 
 
 def main():

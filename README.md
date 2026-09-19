@@ -6,4 +6,9 @@ literal paths and `:parameter` / terminal `*rest` templates once. Calls to
 
 Exact paths use a byte-length direct index. The common case, where one exact
 path has a given length, avoids hashing entirely; only same-length paths use a
-collision map. Template paths use a segment trie.
+collision map. Template paths are grouped by segment count and use the most
+selective literal position as a candidate selector.
+
+The crate is intentionally scoped to the current Breeze gateway contract:
+exact paths, `:parameter` segments, and terminal `*catch_all` segments. Query
+strings are excluded by callers before matching.

@@ -1,14 +1,15 @@
 [package]
 name = "brz-http-router"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 rust-version = "1.85"
-description = "Zero-allocation route selection for Breeze HTTP gateways"
+description = "Shared zero-allocation route selection for Breeze HTTP runtimes"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/we-breeze/http-router"
 
 [dependencies]
 http = "1"
+percent-encoding = "2"
 thiserror = "2"
 
 [lints.rust]
